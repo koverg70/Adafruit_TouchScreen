@@ -3,31 +3,31 @@
 // (c) ladyada / adafruit
 // Code under MIT License
 
-#ifndef _TOUCHSCREEN_KBV_H_
-#define _TOUCHSCREEN_KBV_H_
+#ifndef _TOUCHSCREEN_H_
+#define _TOUCHSCREEN_H_
 #include <stdint.h>
 
-class TSPoint_kbv {
+class TSPoint {
     public:
-        TSPoint_kbv(void);
-        TSPoint_kbv(int16_t x, int16_t y, int16_t z);
+        TSPoint(void);
+        TSPoint(int16_t x, int16_t y, int16_t z);
 
-        bool operator==(TSPoint_kbv);
-        bool operator!=(TSPoint_kbv);
+        bool operator==(TSPoint);
+        bool operator!=(TSPoint);
 
         int16_t x, y, z;
 };
 
-class TouchScreen_kbv {
+class TouchScreen {
     public:
-        TouchScreen_kbv(uint8_t xp, uint8_t yp, uint8_t xm, uint8_t ym);
-        TouchScreen_kbv(uint8_t xp, uint8_t yp, uint8_t xm, uint8_t ym, uint16_t rx);
+        TouchScreen(uint8_t xp, uint8_t yp, uint8_t xm, uint8_t ym);
+        TouchScreen(uint8_t xp, uint8_t yp, uint8_t xm, uint8_t ym, uint16_t rx);
 
 //        bool isTouching(void);
         uint16_t pressure(void);
         int readTouchY();
         int readTouchX();
-        TSPoint_kbv getPoint();
+        TSPoint getPoint();
         int16_t pressureThreshhold;
 
     private:
